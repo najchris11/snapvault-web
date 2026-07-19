@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* SnapVault dark theme — lifted from the app's Stitch design system (Pro Desktop Utility) */
+    --background: 215.2 64.4% 8.8%;
+    --foreground: 221.1 81.4% 91.6%;
+
+    --card: 216.4 40.0% 13.7%;
+    --card-foreground: 221.1 81.4% 91.6%;
+    --card-high: 217.2 31.9% 17.8%;
+    --card-highest: 218.0 26.3% 22.4%;
+    --surface-low: 216.4 45.2% 12.2%;
+
+    --popover: 216.4 40.0% 13.7%;
+    --popover-foreground: 221.1 81.4% 91.6%;
+
+    --primary: 258.3 89.5% 66.3%;
+    --primary-strong: 256.6 100.0% 75.9%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217.2 31.9% 17.8%;
+    --secondary-foreground: 221.1 81.4% 91.6%;
+
+    --muted: 217.2 31.9% 17.8%;
+    --muted-foreground: 222.7 35.4% 75.1%;
+
+    --accent: 217.2 31.9% 17.8%;
+    --accent-foreground: 221.1 81.4% 91.6%;
+
+    --destructive: 0 84.2% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220.0 29.0% 24.3%;
+    --input: 220.0 29.0% 24.3%;
+    --ring: 258.3 89.5% 66.3%;
+
+    --info: 198.4 93.2% 59.6%;
+    --cyan: 201.4 100.0% 74.1%;
+    --success: 141.9 69.2% 58.0%;
+    --warning: 43.3 96.4% 56.3%;
+
+    --radius: 0.75rem;
+  }
+
+  .light {
+    /* SnapVault light theme — matches SnapVaultLightColorScheme in Theme.kt */
+    --background: 222.9 46.7% 97.1%;
+    --foreground: 220.0 48.0% 9.8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220.0 48.0% 9.8%;
+    --card-high: 226.7 39.1% 95.5%;
+    --card-highest: 220.0 35.3% 93.3%;
+    --surface-low: 222.9 53.8% 97.5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220.0 48.0% 9.8%;
+
+    --primary: 259.2 66.1% 53.7%;
+    --primary-strong: 257.6 61.0% 47.3%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 226.7 39.1% 95.5%;
+    --secondary-foreground: 220.0 48.0% 9.8%;
+
+    --muted: 226.7 39.1% 95.5%;
+    --muted-foreground: 240.0 12.1% 30.8%;
+
+    --accent: 226.7 39.1% 95.5%;
+    --accent-foreground: 220.0 48.0% 9.8%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 224.0 28.3% 89.6%;
+    --input: 224.0 28.3% 89.6%;
+    --ring: 259.2 66.1% 53.7%;
+
+    --info: 201.3 96.3% 32.2%;
+    --cyan: 194.7 100.0% 26.5%;
+    --success: 142.4 71.8% 29.2%;
+    --warning: 26.0 90.5% 37.1%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    /* Offsets anchor-link scrolling so section headings clear the sticky nav
+       (~60px tall) instead of landing underneath it. */
+    scroll-padding-top: 84px;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      'cv02',
+      'cv03',
+      'cv04',
+      'cv11';
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.35);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .glass {
+    @apply bg-card/90 backdrop-blur-xl border border-white/[0.06];
+    border-top-color: hsl(var(--foreground) / 0.08);
+  }
+  .light .glass {
+    border-top-color: hsl(var(--foreground) / 0.06);
+  }
+  .glow-ring {
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.4), var(--tw-shadow, 0 0 #0000);
+  }
+}

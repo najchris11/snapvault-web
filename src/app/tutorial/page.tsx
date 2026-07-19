@@ -1,0 +1,93 @@
+import type { Metadata } from 'next';
+
+import { Nav } from '@/components/nav';
+import { Footer } from '@/components/footer';
+import { RELEASES_URL } from '@/lib/links';
+
+export const metadata: Metadata = {
+  title: 'Tutorial — SnapVault',
+  description:
+    'A walkthrough of exporting your Snapchat memories and running them through SnapVault.',
+};
+
+const steps = [
+  {
+    title: 'Request your export',
+    body: 'accounts.snapchat.com → My Data → Export your Memories → Request Only Memories → All Time. Snapchat emails a download link, usually within a few hours.',
+  },
+  {
+    title: 'Install SnapVault',
+    body: 'Grab the installer for your OS from Releases. Releases aren’t code-signed yet, so macOS/Windows will show an unidentified-developer warning — that’s expected, not a red flag.',
+  },
+  {
+    title: 'Point it at your export',
+    body: 'Choose the folder containing your downloaded zip files as the source — don’t extract them first — and pick an output folder with a few extra gigabytes free.',
+  },
+  {
+    title: 'Choose your pipeline',
+    body: 'Turn on Write Date Metadata and Merge Video Overlays. Try Clean Duplicate Files with dry-run on first, so you can see what it would remove before anything happens.',
+  },
+  {
+    title: 'Run it and review',
+    body: 'Hit Start and watch the log panel. When it finishes, check the Library tab — click into a photo to see the recovered time, GPS, and overlay status.',
+  },
+];
+
+export default function TutorialPage() {
+  return (
+    <>
+      <Nav />
+      <main className="mx-auto max-w-[820px] px-6 py-16">
+        <div className="font-mono text-xs font-medium uppercase tracking-wider text-primary-strong">
+          Tutorial
+        </div>
+        <h1 className="mt-3.5 text-balance text-[36px] font-bold leading-tight">
+          Exporting and processing your memories, start to finish.
+        </h1>
+        <p className="mt-4 max-w-[60ch] text-[15.5px] leading-relaxed text-muted-foreground">
+          A five-minute walkthrough of requesting your Snapchat export and running it through
+          SnapVault. Video coming soon — the written steps below cover the same ground in the
+          meantime.
+        </p>
+
+        {/* Video slot — swap the placeholder for an <iframe>/<video> once the tutorial is recorded. */}
+        <div className="glass mt-9 flex aspect-video items-center justify-center rounded-2xl">
+          <div className="flex flex-col items-center gap-2 text-center">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary-strong">
+              ▶
+            </div>
+            <p className="text-sm text-muted-foreground">Tutorial video coming soon</p>
+          </div>
+        </div>
+
+        <ol className="mt-12 flex flex-col gap-5">
+          {steps.map((step, i) => (
+            <li key={step.title} className="glass flex gap-4 rounded-2xl p-5">
+              <span className="font-mono text-sm font-medium text-primary-strong">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h2 className="text-[15px] font-semibold">{step.title}</h2>
+                <p className="mt-1.5 text-[14px] leading-relaxed text-muted-foreground">
+                  {step.body}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <div className="mt-12 flex flex-wrap gap-3">
+          <a
+            href={RELEASES_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-11 items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-strong"
+          >
+            Download SnapVault
+          </a>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+}
