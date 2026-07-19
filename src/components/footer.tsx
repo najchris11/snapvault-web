@@ -9,7 +9,7 @@ export function Footer() {
         <div className="flex items-center gap-2.5">
           <Image src="/icon.png" alt="" width={22} height={22} className="rounded-md" />
           <span className="text-[13px] text-muted-foreground">
-            SnapVault — GPL-3.0 licensed. Forked from ManuelPuchner/snapchat-memories-downloader.
+            SnapVault — GPL-3.0 licensed.
           </span>
         </div>
         <div className="flex gap-5 text-[13px] text-muted-foreground">
