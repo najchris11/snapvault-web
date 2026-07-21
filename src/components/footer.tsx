@@ -2,6 +2,8 @@ import Image from 'next/image';
 
 import { LICENSE_URL, RELEASES_URL, REPO_URL } from '@/lib/links';
 
+const NAJ_DEV_URL = 'https://naj-dev.com';
+
 export function Footer() {
   return (
     <footer className="mt-6 border-t border-white/[0.05] py-10">
@@ -12,7 +14,7 @@ export function Footer() {
             SnapVault — GPL-3.0 licensed.
           </span>
         </div>
-        <div className="flex gap-5 text-[13px] text-muted-foreground">
+        <div className="flex flex-wrap gap-5 text-[13px] text-muted-foreground">
           <a href={REPO_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
             GitHub
           </a>
@@ -21,6 +23,14 @@ export function Footer() {
           </a>
           <a href={LICENSE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
             License
+          </a>
+          <a
+            href={NAJ_DEV_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground"
+          >
+            naj-dev.com
           </a>
         </div>
       </div>
