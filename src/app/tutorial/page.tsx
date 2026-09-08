@@ -45,19 +45,18 @@ export default function TutorialPage() {
           Exporting and processing your memories, start to finish.
         </h1>
         <p className="mt-4 max-w-[60ch] text-[15.5px] leading-relaxed text-muted-foreground">
-          A five-minute walkthrough of requesting your Snapchat export and running it through
-          SnapVault. Video coming soon — the written steps below cover the same ground in the
-          meantime.
+          A two-minute walkthrough of requesting your Snapchat export and running it through
+          SnapVault. The written steps below cover the same ground.
         </p>
 
-        {/* Video slot — swap the placeholder for an <iframe>/<video> once the tutorial is recorded. */}
-        <div className="glass mt-9 flex aspect-video items-center justify-center rounded-2xl">
-          <div className="flex flex-col items-center gap-2 text-center">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary-strong">
-              ▶
-            </div>
-            <p className="text-sm text-muted-foreground">Tutorial video coming soon</p>
-          </div>
+        <div className="glass mt-9 aspect-video overflow-hidden rounded-2xl">
+          <iframe
+            className="h-full w-full"
+            src="https://www.youtube.com/embed/6v-aR5Lgc1k"
+            title="SnapVault Tutorial"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
         </div>
 
         <ol className="mt-12 flex flex-col gap-5">
