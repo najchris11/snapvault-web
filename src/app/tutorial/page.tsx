@@ -45,7 +45,7 @@ export default function TutorialPage() {
           Exporting and processing your memories, start to finish.
         </h1>
         <p className="mt-4 max-w-[60ch] text-[15.5px] leading-relaxed text-muted-foreground">
-          A five-minute walkthrough of requesting your Snapchat export and running it through
+          A two-minute walkthrough of requesting your Snapchat export and running it through
           SnapVault. The written steps below cover the same ground.
         </p>
 
