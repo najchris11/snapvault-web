@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: 'Is any of my data uploaded anywhere?',
-    a: 'No. SnapVault makes no network requests while processing your files — everything runs locally. The entire pipeline is open source, so you can verify this yourself rather than take our word for it.',
+    a: 'No. SnapVault never uploads anything you process. Modern zip exports run entirely offline; the older link-based export needs to download each memory directly from Snapchat’s own servers (the same links your export gave you), but nothing you process is ever sent anywhere else. The entire pipeline is open source, so you can verify this yourself rather than take our word for it.',
   },
   {
     q: 'Why don’t my exported memories have the right date or location?',

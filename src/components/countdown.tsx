@@ -48,7 +48,7 @@ export function Countdown() {
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-warning opacity-60" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-warning" />
         </span>
-        Memories over 5GB move behind a paywall around
+        Old Memories past your first 5GB get archived around
       </div>
       <div className="flex items-baseline gap-3 font-mono tabular-nums">
         {units.map(([value, label]) => (
