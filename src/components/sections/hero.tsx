@@ -40,10 +40,11 @@ export function Hero() {
         </div>
         <p className="mt-2.5 max-w-[52ch] text-[12px] leading-relaxed text-muted-foreground/70">
           Applies to accounts with more than 5GB of Memories on Snapchat&apos;s free tier — Snap
-          hasn&apos;t published an exact deletion date, so this counts down to the end of the
-          announced 12-month grace period.{' '}
+          isn&apos;t deleting anything, but access to it moves behind a paid plan starting
+          January 2027. Back it up now and keep it wherever you actually want it — your own
+          computer, Apple Photos, Google Photos, Immich, whatever you use.{' '}
           <a
-            href="https://newsroom.snap.com/snap-memory-storage"
+            href="https://help.snapchat.com/hc/en-us/articles/41291271694228-How-do-I-manage-my-Memories-storage"
             target="_blank"
             rel="noopener noreferrer"
             className="underline decoration-dotted underline-offset-2 hover:text-foreground"

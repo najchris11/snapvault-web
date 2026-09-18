@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from 'react';
 
-// Snap capped free Memories storage at 5GB on Sept 29, 2025, with a 12-month
-// grace period for anything already over that limit. Snap has not published
-// an exact deletion date — this targets the end of that 12-month window.
-// Source: https://newsroom.snap.com/snap-memory-storage
-const GRACE_PERIOD_END = new Date('2026-09-29T00:00:00Z');
+// Snap capped free Memories storage at 5GB on Sept 29, 2025. Anything over
+// that limit isn't deleted — starting January 2027, Memories older than a
+// year that aren't in your oldest 5GB get archived and need a paid plan to
+// open, edit, or share. Snap hasn't published an exact day, so this targets
+// the start of that month.
+// Source: https://help.snapchat.com/hc/en-us/articles/41291271694228-How-do-I-manage-my-Memories-storage
+const PAYWALL_START = new Date('2027-01-01T00:00:00Z');
 
 function getRemaining(target: Date) {
   const diff = target.getTime() - Date.now();
@@ -24,8 +26,8 @@ export function Countdown() {
 
   useEffect(() => {
     setMounted(true);
-    setRemaining(getRemaining(GRACE_PERIOD_END));
-    const id = setInterval(() => setRemaining(getRemaining(GRACE_PERIOD_END)), 1000);
+    setRemaining(getRemaining(PAYWALL_START));
+    const id = setInterval(() => setRemaining(getRemaining(PAYWALL_START)), 1000);
     return () => clearInterval(id);
   }, []);
 
@@ -46,7 +48,7 @@ export function Countdown() {
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-warning opacity-60" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-warning" />
         </span>
-        Snapchat&apos;s free storage grace period ends around
+        Memories over 5GB move behind a paywall around
       </div>
       <div className="flex items-baseline gap-3 font-mono tabular-nums">
         {units.map(([value, label]) => (

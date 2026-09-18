@@ -1,5 +1,6 @@
 import { Nav } from '@/components/nav';
 import { Hero } from '@/components/sections/hero';
+import { TutorialTeaser } from '@/components/sections/tutorial-teaser';
 import { Problem } from '@/components/sections/problem';
 import { HowItWorks } from '@/components/sections/how-it-works';
 import { Features } from '@/components/sections/features';
@@ -23,6 +24,7 @@ export default function Home() {
       <Nav />
       <main className="mx-auto max-w-[1120px] px-6">
         <Hero />
+        <TutorialTeaser />
         <Problem />
         <HowItWorks />
         <Features />

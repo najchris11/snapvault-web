@@ -17,7 +17,7 @@ const steps = [
   {
     num: '04',
     title: 'Get your library back',
-    body: 'Organized, correctly-dated, geotagged files — ready to drop straight into Photos, Lightroom, or a hard drive.',
+    body: 'Organized, correctly-dated, geotagged files — ready to drop into Apple Photos, Google Photos, Immich, or just a folder on your own drive.',
   },
 ];
 
