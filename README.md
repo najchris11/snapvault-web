@@ -19,7 +19,7 @@ npm run dev
 
 - `src/app/page.tsx` — landing page, assembled from `src/components/sections/*`
 - `src/app/tutorial/page.tsx` — tutorial walkthrough page, with the embedded video
-- `src/components/countdown.tsx` — live countdown to January 2027, when Memories over Snapchat's 5GB free-storage cap get archived behind a paid plan ([source](https://help.snapchat.com/hc/en-us/articles/41291271694228-How-do-I-manage-my-Memories-storage)); update `PAYWALL_START` if Snap publishes a firmer date
+- `src/components/countdown.tsx` — live countdown to January 2027, when Memories older than a year that fall outside Snapchat's 5GB free-storage cap get archived behind a paid plan ([source](https://help.snapchat.com/hc/en-us/articles/41291271694228-How-do-I-manage-my-Memories-storage)); update `PAYWALL_START` if Snap publishes a firmer date
 - `src/lib/links.ts` — canonical repo/release/license/support URLs, used everywhere instead of hardcoding
 
 ## Deployment

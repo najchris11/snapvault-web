@@ -8,7 +8,7 @@ export function Hero() {
       <div>
         <div className="flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-wider text-primary-strong">
           <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary))]" />
-          Open source · GPL-3.0 · Zero network calls
+          Open source · GPL-3.0 · No uploads, ever
         </div>
 
         <h1 className="mt-4 text-balance text-[42px] font-bold leading-[1.05] tracking-tight md:text-[52px]">
@@ -39,10 +39,11 @@ export function Hero() {
           <Countdown />
         </div>
         <p className="mt-2.5 max-w-[52ch] text-[12px] leading-relaxed text-muted-foreground/70">
-          Applies to accounts with more than 5GB of Memories on Snapchat&apos;s free tier — Snap
-          isn&apos;t deleting anything, but access to it moves behind a paid plan starting
-          January 2027. Back it up now and keep it wherever you actually want it — your own
-          computer, Apple Photos, Google Photos, Immich, whatever you use.{' '}
+          Applies to Memories older than a year that fall outside your oldest 5GB on
+          Snapchat&apos;s free tier — Snap isn&apos;t deleting them, but starting January 2027
+          they&apos;re archived behind a paid plan until you upgrade. Back it up now and keep it
+          wherever you actually want it — your own computer, Apple Photos, Google Photos,
+          Immich, whatever you use.{' '}
           <a
             href="https://help.snapchat.com/hc/en-us/articles/41291271694228-How-do-I-manage-my-Memories-storage"
             target="_blank"
