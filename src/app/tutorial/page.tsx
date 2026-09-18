@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import { Nav } from '@/components/nav';
 import { Footer } from '@/components/footer';
-import { RELEASES_URL } from '@/lib/links';
+import { RELEASES_URL, TUTORIAL_VIDEO_ID } from '@/lib/links';
 
 export const metadata: Metadata = {
   title: 'Tutorial — SnapVault',
@@ -52,7 +52,7 @@ export default function TutorialPage() {
         <div className="glass mt-9 aspect-video overflow-hidden rounded-2xl">
           <iframe
             className="h-full w-full"
-            src="https://www.youtube.com/embed/6v-aR5Lgc1k"
+            src={`https://www.youtube.com/embed/${TUTORIAL_VIDEO_ID}`}
             title="SnapVault Tutorial"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen

@@ -9,8 +9,8 @@ export function Cta() {
           Your memories are already yours. Get them back in one piece.
         </h2>
         <p className="max-w-[48ch] text-[15px] text-muted-foreground">
-          Free, open source, and it never phones home. Download SnapVault and point it at your
-          export.
+          Free, open source, and nothing you process ever leaves your machine. Download
+          SnapVault and point it at your export.
         </p>
         <div className="mt-1 flex flex-wrap justify-center gap-3">
           <Button asChild variant="primary">
