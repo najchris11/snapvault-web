@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { LICENSE_URL, RELEASES_URL, REPO_URL } from '@/lib/links';
+import { KOFI_URL, LICENSE_URL, RELEASES_URL, REPO_URL } from '@/lib/links';
 
 const NAJ_DEV_URL = 'https://naj-dev.com';
 
@@ -32,8 +32,20 @@ export function Footer() {
           >
             naj-dev.com
           </a>
+          <a
+            href={KOFI_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground"
+          >
+            Support on Ko-fi
+          </a>
         </div>
       </div>
+      <p className="mx-auto mt-6 max-w-[1120px] px-6 text-[11.5px] leading-relaxed text-muted-foreground/60">
+        SnapVault is an independent, community-built project and is not affiliated with,
+        endorsed by, or sponsored by Snap Inc. Snapchat is a trademark of Snap Inc.
+      </p>
     </footer>
   );
 }
