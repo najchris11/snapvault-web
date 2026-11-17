@@ -32,13 +32,13 @@ export function Problem() {
 function FileRow({ name, tag, good = false }: { name: string; tag: string; good?: boolean }) {
   return (
     <div
-      className={`flex items-center justify-between rounded-lg border px-3 py-2.5 font-mono text-xs ${
+      className={`flex flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-lg border px-3 py-2.5 font-mono text-xs ${
         good ? 'border-success/40 bg-surface-low' : 'border-border bg-surface-low'
       }`}
     >
-      <span>{name}</span>
+      <span className="min-w-0">{name}</span>
       <span
-        className={`shrink-0 pl-3 text-[10px] uppercase tracking-wide ${
+        className={`text-[10px] uppercase tracking-wide ${
           good ? 'text-success' : 'italic text-muted-foreground'
         }`}
       >
