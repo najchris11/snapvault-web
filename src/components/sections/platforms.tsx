@@ -1,23 +1,5 @@
-import { Button } from '@/components/ui/button';
-import { RELEASES_URL } from '@/lib/links';
-
-const platforms = [
-  {
-    name: 'macOS',
-    detail: '.dmg installer · macOS 12+ · FFmpeg & ExifTool bundled',
-    cta: 'Download .dmg',
-  },
-  {
-    name: 'Windows',
-    detail: '.msi installer · Windows 10+ · FFmpeg & ExifTool bundled',
-    cta: 'Download .msi',
-  },
-  {
-    name: 'Linux',
-    detail: '.deb package · Ubuntu 20.04+ · install FFmpeg via your package manager',
-    cta: 'Download .deb',
-  },
-];
+import { DownloadButton } from '@/components/download-button';
+import { INSTALLERS, InstallerTarget } from '@/lib/downloads';
 
 export function Platforms() {
   return (
@@ -26,19 +8,26 @@ export function Platforms() {
         <div className="font-mono text-xs font-medium uppercase tracking-wider text-primary-strong">
           Get SnapVault
         </div>
-        <h2 className="mt-3.5 text-[32px] font-bold">Native installers, every platform.</h2>
+        <h2 className="mt-3.5 text-[32px] font-bold">Choose the installer for your computer.</h2>
+        <p className="mt-4 text-sm text-muted-foreground">
+          On a Mac, check Apple menu → About This Mac: M1 or newer uses Apple Silicon; Intel uses
+          x64. Linux needs FFmpeg and Perl installed separately.
+        </p>
       </div>
-
-      <div className="grid gap-5 sm:grid-cols-3">
-        {platforms.map((p) => (
-          <div key={p.name} className="glass flex flex-col gap-3.5 rounded-2xl p-6">
-            <h3 className="text-[16px] font-semibold">{p.name}</h3>
-            <p className="text-[12.5px] text-muted-foreground">{p.detail}</p>
-            <Button asChild variant="ghost" className="mt-1 w-full">
-              <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer">
-                {p.cta}
-              </a>
-            </Button>
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {(Object.keys(INSTALLERS) as InstallerTarget[]).map((target) => (
+          <div key={target} className="glass flex flex-col gap-4 rounded-2xl p-6">
+            <h3 className="text-base font-semibold">{INSTALLERS[target].label}</h3>
+            <p className="text-sm text-muted-foreground">
+              {target.startsWith('macos')
+                ? 'DMG · macOS 12+ · tools bundled'
+                : target === 'windows-x64'
+                  ? 'MSI · Windows 10+ · tools bundled'
+                  : 'DEB · Ubuntu 20.04+ · FFmpeg + Perl required'}
+            </p>
+            <DownloadButton target={target}>
+              Download .{INSTALLERS[target].extension}
+            </DownloadButton>
           </div>
         ))}
       </div>

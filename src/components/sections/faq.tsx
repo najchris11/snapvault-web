@@ -5,10 +5,10 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-const faqs = [
+export const faqs = [
   {
     q: 'Do I need Python, a CLI, or any setup?',
-    a: 'No. SnapVault is a native desktop app — install it, point it at your export, and go. FFmpeg and ExifTool ship bundled on macOS and Windows; on Linux you’ll install FFmpeg with your package manager once.',
+    a: 'No. SnapVault is a native desktop app — install it, point it at your export, and go. FFmpeg and ExifTool ship bundled on macOS and Windows; on Linux install FFmpeg and Perl with your package manager.',
   },
   {
     q: 'Is any of my data uploaded anywhere?',

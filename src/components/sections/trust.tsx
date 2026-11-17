@@ -25,11 +25,11 @@ export function Trust() {
             Nothing to upload, because nothing gets uploaded.
           </h2>
           <p className="mt-3.5 text-[15px] leading-relaxed text-muted-foreground">
-            SnapVault never uploads anything you process. Modern zip exports run entirely
-            offline; the legacy link-based export downloads each memory directly from
-            Snapchat&apos;s own servers, the same as clicking the link yourself — either way,
-            there&apos;s no third-party server involved, and because it&apos;s fully open
-            source, you don&apos;t have to take that on faith.
+            SnapVault never uploads anything you process. Modern zip exports run entirely offline;
+            the legacy link-based export downloads each memory directly from Snapchat&apos;s own
+            servers, the same as clicking the link yourself — either way, there&apos;s no
+            third-party server involved, and because it&apos;s fully open source, you don&apos;t
+            have to take that on faith.
           </p>
           <div className="mt-5 flex flex-col gap-3.5">
             {points.map((point) => (

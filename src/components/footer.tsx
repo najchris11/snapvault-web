@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { GUIDES } from '@/lib/guides';
 
 import { KOFI_URL, LICENSE_URL, RELEASES_URL, REPO_URL } from '@/lib/links';
 
@@ -10,18 +12,31 @@ export function Footer() {
       <div className="mx-auto flex max-w-[1120px] flex-wrap items-center justify-between gap-5 px-6">
         <div className="flex items-center gap-2.5">
           <Image src="/icon.png" alt="" width={22} height={22} className="rounded-md" />
-          <span className="text-[13px] text-muted-foreground">
-            SnapVault — GPL-3.0 licensed.
-          </span>
+          <span className="text-[13px] text-muted-foreground">SnapVault — GPL-3.0 licensed.</span>
         </div>
         <div className="flex flex-wrap gap-5 text-[13px] text-muted-foreground">
-          <a href={REPO_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+          <a
+            href={REPO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground"
+          >
             GitHub
           </a>
-          <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+          <a
+            href={RELEASES_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground"
+          >
             Releases
           </a>
-          <a href={LICENSE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+          <a
+            href={LICENSE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground"
+          >
             License
           </a>
           <a
@@ -42,9 +57,26 @@ export function Footer() {
           </a>
         </div>
       </div>
+      <div className="mx-auto mt-6 flex max-w-[1120px] flex-wrap gap-4 px-6 text-xs text-muted-foreground">
+        {GUIDES.map((guide) => (
+          <Link className="underline hover:text-foreground" key={guide.path} href={guide.path}>
+            {guide.title}
+          </Link>
+        ))}
+      </div>
       <p className="mx-auto mt-6 max-w-[1120px] px-6 text-[11.5px] leading-relaxed text-muted-foreground/60">
-        SnapVault is an independent, community-built project and is not affiliated with,
-        endorsed by, or sponsored by Snap Inc. Snapchat is a trademark of Snap Inc.
+        This website uses aggregate Vercel Web Analytics, respects Do Not Track, and removes query
+        strings from page-view events. This is separate from the app, which has no telemetry. Read{' '}
+        <a
+          className="underline"
+          href="https://vercel.com/docs/analytics/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Vercel’s analytics privacy details
+        </a>
+        . SnapVault is an independent, community-built project and is not affiliated with, endorsed
+        by, or sponsored by Snap Inc. Snapchat is a trademark of Snap Inc.
       </p>
     </footer>
   );

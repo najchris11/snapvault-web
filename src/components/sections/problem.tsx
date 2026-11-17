@@ -10,8 +10,8 @@ export function Problem() {
         </h2>
         <p className="mt-4 text-pretty text-[15.5px] leading-relaxed text-muted-foreground">
           Every export is a pile of 2GB zip files. Photos and videos come out with only a bare
-          capture <em className="not-italic text-foreground">date</em> — no time, no location —
-          and the sticker or caption overlay Snapchat applied ships as a{' '}
+          capture <em className="not-italic text-foreground">date</em> — no time, no location — and
+          the sticker or caption overlay Snapchat applied ships as a{' '}
           <em className="not-italic text-foreground">separate file</em> you have to match up
           yourself, by hand, across thousands of items.
         </p>
@@ -23,11 +23,7 @@ export function Problem() {
         <div className="flex items-center gap-2 self-center py-1 font-mono text-xs uppercase tracking-wide text-primary-strong">
           ↓ SnapVault ↓
         </div>
-        <FileRow
-          name="2024-03-11_8f2c.jpg"
-          tag="2:41 PM · 39.96°N, 82.99°W · merged"
-          good
-        />
+        <FileRow name="2024-03-11_8f2c.jpg" tag="2:41 PM · 39.96°N, 82.99°W · merged" good />
       </div>
     </section>
   );
