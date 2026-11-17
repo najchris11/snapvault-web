@@ -50,7 +50,7 @@ export function Features() {
         <FeatureCard
           icon="⧉"
           title="Duplicate cleanup"
-          body="Finds byte-identical copies and keeps the earliest-dated one. A dry-run mode shows exactly what would go, before anything does."
+          body="Finds byte-identical copies and keeps the earliest-dated one, but never removes part of a memory’s main + overlay pair, so the same caption on two memories stays with both. A dry-run mode shows exactly what would go, before anything does."
         />
         <FeatureCard
           icon="⇄"

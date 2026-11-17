@@ -58,13 +58,13 @@ export const GUIDES: Guide[] = [
         title: 'Combine overlays without losing clean copies',
         paragraphs: [
           'Snapchat can export a photo or video separately from its caption/sticker overlay. Combining those pairs produces a viewable media file with the edit rendered into it. Supported formats and video tooling vary by platform; desktop has the most complete pipeline.',
-          'On Dashboard, use Combine photo and video overlays. Enable Keep original unmerged files to preserve the separate photo/video and overlay. Otherwise, successful combination with carried metadata can permanently remove the source pair. Duplicate cleanup has its own controls: keep Preview duplicate removal enabled while reviewing your first run.',
+          'On Dashboard, use Combine photo and video overlays. Enable Keep original unmerged files to preserve the separate photo/video and overlay. Otherwise, successful combination with carried metadata can permanently remove the source pair. On Android and iOS, that applies to photos only: edits are staged, nothing is overwritten, and combined videos always keep their originals. Duplicate cleanup has its own controls: keep Preview duplicate removal enabled while reviewing your first run.',
         ],
       },
       {
         title: 'Verify the recovered result',
         paragraphs: [
-          'Inspect multiple dates, videos, and overlay examples in Library. GPS metadata is embedded in the output and travels with shared copies; disable precise time and GPS matching if you prefer date-only metadata. A missing GPS badge may simply mean there was no trustworthy matching location record.',
+          'Inspect multiple dates, videos, and overlay examples in Library. GPS metadata is embedded in the output and travels with shared copies; disable precise time and GPS matching if you prefer date-only metadata. A missing GPS badge may simply mean there was no trustworthy matching location record. On Android and iOS, photos are fully tagged, but Android videos get no date or GPS written into the file and iOS videos get no GPS; use the desktop app if you need those tags in videos.',
           'If a combined file is absent, read the run log for unsupported formats, missing tools, or metadata failures. macOS and Windows include FFmpeg and ExifTool. Linux also needs FFmpeg and Perl available. Retain your original export so you can rerun after resolving a problem.',
         ],
       },
@@ -128,7 +128,7 @@ export const GUIDES: Guide[] = [
         title: 'Compare workflows, not promises',
         paragraphs: [
           'A command-line project can be a good fit if you are comfortable installing its runtime and reviewing logs. Check its license, supported formats, maintenance, and dependencies. “Free” should be verified at the point of processing, including any file-count limit or payment needed to finish a large export.',
-          'SnapVault is GPL-3.0 software with no processing paywall or account requirement. The desktop app bundles FFmpeg and ExifTool on macOS and Windows, imports multi-part ZIPs, restores supported date/GPS metadata, combines overlays, and includes a local Library. Linux needs FFmpeg and Perl; mobile feature coverage differs from desktop.',
+          'SnapVault is GPL-3.0 software with no processing paywall or account requirement. The desktop app bundles FFmpeg and ExifTool on macOS and Windows, imports multi-part ZIPs, restores supported date/GPS metadata, combines overlays, and includes a local Library. Linux needs FFmpeg and Perl. The Android and iOS apps also import ZIPs and combine photo and video overlays, but their video metadata is incomplete: photos are fully tagged on both, while Android videos get no date or GPS written into the file and iOS videos get no GPS. On desktop, videos are tagged through ExifTool.',
         ],
       },
       {

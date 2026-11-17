@@ -24,7 +24,7 @@ export const faqs = [
   },
   {
     q: 'Will my restored files show up correctly in Google Photos or Apple Photos?',
-    a: 'Yes. SnapVault writes real EXIF date and GPS metadata into the files themselves, so photo library apps that read EXIF will place them chronologically and on the map correctly, the same as any camera photo.',
+    a: 'Yes. The desktop app writes real date and GPS metadata into your photos and videos themselves, so photo library apps that read it will place them chronologically and on the map correctly, the same as any camera photo. On Android and iOS, photos are tagged the same way, but videos are not yet: Android writes no date or GPS into videos, and iOS writes no GPS.',
   },
   {
     q: 'What about My Eyes Only memories?',
