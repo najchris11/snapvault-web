@@ -1,3 +1,6 @@
+import { StructuredData } from '@/components/structured-data';
+import { softwareData, faqData } from '@/lib/structured-data';
+import { MobileHandoff } from '@/components/mobile-handoff';
 import { Nav } from '@/components/nav';
 import { Hero } from '@/components/sections/hero';
 import { TutorialTeaser } from '@/components/sections/tutorial-teaser';
@@ -21,8 +24,11 @@ export default function Home() {
             'radial-gradient(1200px 600px at 15% -10%, hsl(var(--primary) / 0.16), transparent 60%), radial-gradient(900px 500px at 85% 0%, hsl(var(--info) / 0.10), transparent 55%)',
         }}
       />
+      <StructuredData data={softwareData} />
+      <StructuredData data={faqData} />
       <Nav />
       <main className="mx-auto max-w-[1120px] px-6">
+        <MobileHandoff />
         <Hero />
         <TutorialTeaser />
         <Problem />

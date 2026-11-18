@@ -29,3 +29,14 @@ Vercel, with `snapvault.naj-dev.com` as a custom domain routed through Cloudflar
 ## License
 
 This site describes [SnapVault](https://github.com/najchris11/snapchat-memories-downloader), which is GPL-3.0. The site's own code is unlicensed.
+
+## Verification
+
+Run `npm test`, `npm run lint`, `npx tsc --noEmit`, and `npm run build`.
+The Node tests load the project's TypeScript using its installed compiler and render React components to HTML; no extra test runtime is required.
+
+Installer actions resolve the latest release's actual versioned asset on click. Missing assets or GitHub failures fall back to Releases. macOS CPU type is selected explicitly because browser user agents do not reliably identify Apple Silicon.
+
+Website analytics uses Vercel Web Analytics, omits query strings, and respects Do Not Track. Enable Web Analytics for the Vercel project before deploying to collect aggregate page views. This does not add telemetry to the SnapVault application.
+
+The social image is 1200×630; screenshots show the current Compose UI with generated demo images, not private exports. The tutorial's VideoObject intentionally omits an unverified upload date; add the real publication date when available rather than inventing one.

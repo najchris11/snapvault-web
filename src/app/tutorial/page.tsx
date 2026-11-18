@@ -1,11 +1,15 @@
+import Image from 'next/image';
+import { StructuredData } from '@/components/structured-data';
+import { videoData } from '@/lib/structured-data';
 import type { Metadata } from 'next';
 
 import { Nav } from '@/components/nav';
 import { Footer } from '@/components/footer';
-import { RELEASES_URL, TUTORIAL_VIDEO_ID } from '@/lib/links';
+import { TUTORIAL_VIDEO_ID } from '@/lib/links';
 
 export const metadata: Metadata = {
   title: 'Tutorial — SnapVault',
+  alternates: { canonical: '/tutorial' },
   description:
     'A walkthrough of exporting your Snapchat memories and running them through SnapVault.',
 };
@@ -17,15 +21,15 @@ const steps = [
   },
   {
     title: 'Install SnapVault',
-    body: 'Grab the installer for your OS from Releases. Releases aren’t code-signed yet, so macOS/Windows will show an unidentified-developer warning — that’s expected, not a red flag.',
+    body: 'Choose your computer’s installer below. Apple Silicon and Intel Macs use different downloads. Current direct installers are unsigned: verify the source, then follow the platform-specific installation guidance.',
   },
   {
     title: 'Point it at your export',
-    body: 'Choose the folder containing your downloaded zip files as the source — don’t extract them first — and pick an output folder with a few extra gigabytes free.',
+    body: 'Choose export file or Choose export folder; SnapVault detects ZIP archives or memories history automatically. Keep all ZIP parts together and select a separate output folder with enough free space.',
   },
   {
     title: 'Choose your pipeline',
-    body: 'Turn on Write Date Metadata and Merge Video Overlays. Try Clean Duplicate Files with dry-run on first, so you can see what it would remove before anything happens.',
+    body: 'Use Write date and location metadata with Precise time + GPS matching, and Combine photo and video overlays. Enable Keep original unmerged files if you want clean copies too. Leave Preview duplicate removal enabled while reviewing your first run.',
   },
   {
     title: 'Run it and review',
@@ -36,6 +40,7 @@ const steps = [
 export default function TutorialPage() {
   return (
     <>
+      <StructuredData data={videoData} />
       <Nav />
       <main className="mx-auto max-w-[820px] px-6 py-16">
         <div className="font-mono text-xs font-medium uppercase tracking-wider text-primary-strong">
@@ -75,9 +80,54 @@ export default function TutorialPage() {
           ))}
         </ol>
 
+        <section className="mt-12 space-y-6" aria-label="Current app screenshots">
+          <h2 className="text-2xl font-semibold">What you’ll see in SnapVault</h2>
+          <figure>
+            <Image
+              className="rounded-xl border border-border"
+              src="/screenshots/dashboard.png"
+              alt="Current Dashboard controls and import progress"
+              width={1024}
+              height={768}
+            />
+            <figcaption className="mt-2 text-xs text-muted-foreground">
+              Choose your source and review the run options.
+            </figcaption>
+          </figure>
+          <figure>
+            <Image
+              className="rounded-xl border border-border"
+              src="/screenshots/library.png"
+              alt="SnapVault Library with generated sample images, date sorting, filters, and inspector"
+              width={1024}
+              height={768}
+            />
+            <figcaption className="mt-2 text-xs text-muted-foreground">
+              Actual Library UI with generated demo media; no personal photos are shown.
+            </figcaption>
+          </figure>
+        </section>
+        <figure className="mt-10">
+          <Image
+            src="/screenshots/overlay-demo.gif"
+            alt="Generated sample before and after the real SnapVault overlay compositor combines a caption while preserving capture time, UTC offset, and GPS metadata"
+            width={640}
+            height={480}
+            unoptimized
+            className="rounded-xl border border-border"
+          />
+          <figcaption className="mt-3 text-sm text-muted-foreground">
+            Generated demo media, processed by the actual desktop compositor. The combined JPEG
+            retains the test capture date, UTC offset, and GPS tags;{' '}
+            <a href="/screenshots/demo-metadata.json" className="underline">
+              inspect the verified EXIF output
+            </a>
+            .
+          </figcaption>
+        </figure>
         <div className="mt-12 flex flex-wrap gap-3">
           <a
-            href={RELEASES_URL}
+            href="/#download"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-11 items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-strong"

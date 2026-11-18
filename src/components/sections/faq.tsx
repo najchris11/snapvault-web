@@ -5,10 +5,10 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-const faqs = [
+export const faqs = [
   {
     q: 'Do I need Python, a CLI, or any setup?',
-    a: 'No. SnapVault is a native desktop app — install it, point it at your export, and go. FFmpeg and ExifTool ship bundled on macOS and Windows; on Linux you’ll install FFmpeg with your package manager once.',
+    a: 'No. SnapVault is a native desktop app — install it, point it at your export, and go. FFmpeg and ExifTool ship bundled on macOS and Windows; on Linux install FFmpeg and Perl with your package manager.',
   },
   {
     q: 'Is any of my data uploaded anywhere?',
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'Will my restored files show up correctly in Google Photos or Apple Photos?',
-    a: 'Yes. SnapVault writes real EXIF date and GPS metadata into the files themselves, so photo library apps that read EXIF will place them chronologically and on the map correctly, the same as any camera photo.',
+    a: 'Yes. The desktop app writes real date and GPS metadata into your photos and videos themselves, so photo library apps that read it will place them chronologically and on the map correctly, the same as any camera photo. On Android and iOS, photos are tagged the same way, but videos are not yet: Android writes no date or GPS into videos, and iOS writes no GPS.',
   },
   {
     q: 'What about My Eyes Only memories?',

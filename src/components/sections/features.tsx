@@ -9,8 +9,8 @@ export function Features() {
           The parts that are genuinely hard, done for you.
         </h2>
         <p className="mt-3.5 text-[15.5px] leading-relaxed text-muted-foreground">
-          Not a file mover — a real recovery pipeline built around how Snapchat&apos;s export
-          format actually works.
+          Not a file mover — a real recovery pipeline built around how Snapchat&apos;s export format
+          actually works.
         </p>
       </div>
 
@@ -22,11 +22,11 @@ export function Features() {
             </div>
             <h3 className="mt-3.5 text-[16.5px] font-semibold">Precise time + GPS recovery</h3>
             <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">
-              Filenames only carry a capture <em className="not-italic text-foreground">date</em>{' '}
-              — but each file&apos;s exact timestamp is buried in the zip archive&apos;s own
-              metadata. SnapVault cross-references that timestamp, second-for-second, against
-              your export&apos;s JSON history to recover the time of day and GPS coordinates.
-              When two records collide and disagree, it omits GPS rather than guess.
+              Filenames only carry a capture <em className="not-italic text-foreground">date</em> —
+              but each file&apos;s exact timestamp is buried in the zip archive&apos;s own metadata.
+              SnapVault cross-references that timestamp, second-for-second, against your
+              export&apos;s JSON history to recover the time of day and GPS coordinates. When two
+              records collide and disagree, it omits GPS rather than guess.
             </p>
           </div>
           <div className="overflow-x-auto rounded-[10px] border border-border bg-background/60 px-4 py-3.5 font-mono text-[11.5px] leading-[1.9] text-muted-foreground">
@@ -50,7 +50,7 @@ export function Features() {
         <FeatureCard
           icon="⧉"
           title="Duplicate cleanup"
-          body="Finds byte-identical copies and keeps the earliest-dated one. A dry-run mode shows exactly what would go, before anything does."
+          body="Finds byte-identical copies and keeps the earliest-dated one, but never removes part of a memory’s main + overlay pair, so the same caption on two memories stays with both. A dry-run mode shows exactly what would go, before anything does."
         />
         <FeatureCard
           icon="⇄"

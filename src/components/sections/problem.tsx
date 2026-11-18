@@ -10,8 +10,8 @@ export function Problem() {
         </h2>
         <p className="mt-4 text-pretty text-[15.5px] leading-relaxed text-muted-foreground">
           Every export is a pile of 2GB zip files. Photos and videos come out with only a bare
-          capture <em className="not-italic text-foreground">date</em> — no time, no location —
-          and the sticker or caption overlay Snapchat applied ships as a{' '}
+          capture <em className="not-italic text-foreground">date</em> — no time, no location — and
+          the sticker or caption overlay Snapchat applied ships as a{' '}
           <em className="not-italic text-foreground">separate file</em> you have to match up
           yourself, by hand, across thousands of items.
         </p>
@@ -23,11 +23,7 @@ export function Problem() {
         <div className="flex items-center gap-2 self-center py-1 font-mono text-xs uppercase tracking-wide text-primary-strong">
           ↓ SnapVault ↓
         </div>
-        <FileRow
-          name="2024-03-11_8f2c.jpg"
-          tag="2:41 PM · 39.96°N, 82.99°W · merged"
-          good
-        />
+        <FileRow name="2024-03-11_8f2c.jpg" tag="2:41 PM · 39.96°N, 82.99°W · merged" good />
       </div>
     </section>
   );
@@ -36,13 +32,13 @@ export function Problem() {
 function FileRow({ name, tag, good = false }: { name: string; tag: string; good?: boolean }) {
   return (
     <div
-      className={`flex items-center justify-between rounded-lg border px-3 py-2.5 font-mono text-xs ${
+      className={`flex flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-lg border px-3 py-2.5 font-mono text-xs ${
         good ? 'border-success/40 bg-surface-low' : 'border-border bg-surface-low'
       }`}
     >
-      <span>{name}</span>
+      <span className="min-w-0">{name}</span>
       <span
-        className={`shrink-0 pl-3 text-[10px] uppercase tracking-wide ${
+        className={`text-[10px] uppercase tracking-wide ${
           good ? 'text-success' : 'italic text-muted-foreground'
         }`}
       >
